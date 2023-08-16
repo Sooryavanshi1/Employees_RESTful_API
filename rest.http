@@ -1,0 +1,28 @@
+POST http://localhost:3000/employee
+Content-Type: application/json
+
+{
+    "employee_Name": "Tushar Deo",
+    "employee_Post": "Product Engineer",
+    "employee_Salary": 60000
+}
+
+###
+POST http://localhost:3000/employee
+Content-Type: application/json
+
+{
+    "employee_Name":"Aman Kumar",
+    "employee_Post":"Associate Solution Engineer",
+    "employee_Salary":35000
+}
+
+###
+
+POST http://localhost:3000/employee
+Content-Type: application/json
+
+{
+    "employee_Post":"Associate Solution Engineer",
+    "employee_Salary":35000
+}
