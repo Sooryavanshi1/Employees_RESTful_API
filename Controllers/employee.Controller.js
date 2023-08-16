@@ -18,5 +18,18 @@ module.exports={
             }
             next(err);
         }
+    },
+    getEmployeesBySalary:async(req,res,next)=>{
+        try {
+            const salary = req.query.employee_Salary;
+            const employees = await Employee.find({employee_Salary:salary});
+            if(employees.length===0){
+                throw createError(404,"No Employees on this Pay Scale");
+            }
+            res.send(employees);
+        } catch (error) {
+            next(error);
+        }
+
     }
 }

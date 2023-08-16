@@ -26,3 +26,33 @@ Content-Type: application/json
     "employee_Post":"Associate Solution Engineer",
     "employee_Salary":35000
 }
+
+###
+
+POST http://localhost:3000/employee
+Content-Type: application/json
+
+{
+    "employee_Name": "xyz abc",
+    "employee_Post": "Product Manager",
+    "employee_Salary": 60000
+}
+
+###
+
+POST http://localhost:3000/employee
+Content-Type: application/json
+
+{
+    "employee_Name": "abc xyz",
+    "employee_Post": "Product Tester",
+    "employee_Salary": 60000
+}
+
+###
+
+GET http://localhost:3000/employee?employee_Salary=60000
+
+###
+
+GET http://localhost:3000/employee?employee_Salary=6000

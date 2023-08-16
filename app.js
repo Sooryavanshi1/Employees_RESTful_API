@@ -4,6 +4,8 @@ const app = express();
 
 app.use(express.json());
 
+app.use(express.urlencoded({extended:true}));
+
 require('./initialize.Database')()
 
 const employeeRoute = require('./Routes/employee.Routes');
