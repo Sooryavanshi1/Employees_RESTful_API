@@ -58,5 +58,25 @@ module.exports={
             }
             next(error);
         }
+    },
+    updateEmployeeSalaryByID:async(req,res,next)=>{
+        try{
+        const id = req.params.id;
+        const salary = req.body.employee_Salary;
+        const updates =  req.body;
+        const options = {new:true};
+
+        const employee = Employee.findById(id);
+        if(!salary){
+            throw createError(422,"Please provide an amount");
+        }
+        const updatedResults = await Employee.findByIdAndUpdate(id,updates,options);
+        if(!updatedResults){
+            throw createError(404,"Employee Can't be found");
+        }
+        res.send(updatedResults);
+    }catch(error){
+        next(error);
+    }
     }
 }

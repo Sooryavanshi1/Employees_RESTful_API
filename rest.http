@@ -64,3 +64,12 @@ GET http://localhost:3000/employee/all
 ###
 
 GET http://localhost:3000/employee/64dc4531c3e2f92e65233d01
+
+###
+
+PUT http://localhost:3000/employee/64dc4531c3e2f92e65233d01
+Content-Type: application/json
+
+{
+    "employee_Salary":50000
+}
