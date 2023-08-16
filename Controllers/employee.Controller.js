@@ -82,5 +82,22 @@ module.exports={
         }
         next(error);
     }
+    },
+    updatePostOfAll:async(req,res,next)=>{
+        try{
+        const post = req.query.employee_Post;
+        const newPost = req.body.employee_Post;
+        const updates = req.body;
+        const options = {new:true};
+        var employees = await Employee.find({employee_Post:post});
+        const results = await Employee.updateMany({employee_Post:post},updates);
+            if(results.modifiedCount===0){
+                throw createError(404,"No such post present");
+            }
+        employees = await Employee.find({employee_Post:newPost});
+        res.send(employees);
+        }catch(error){
+            next(error);
+        }
     }
 }

@@ -63,11 +63,11 @@ GET http://localhost:3000/employee/all
 
 ###
 
-GET http://localhost:3000/employee/64dc4531c3e2f92e65233d01
+GET http://localhost:3000/employee/64dc9d2304bd6d2e51e92c31
 
 ###
 
-PATCH http://localhost:3000/employee/64dc4531c3e2f92e65233d01
+PATCH http://localhost:3000/employee/64dc9d2304bd6d2e51e92c31
 Content-Type: application/json
 
 {
@@ -82,3 +82,20 @@ Content-Type: application/json
     "employee_Salary":500000
 }
 
+###
+
+PATCH http://localhost:3000/employee?employee_Post=Senior Engineer
+Content-Type: application/json
+
+{
+    "employee_Post":"Product Engineer"
+}
+
+###
+
+PATCH http://localhost:3000/employee?employee_Post=xyz
+Content-Type: application/json
+
+{
+    "employee_Post":"Senior Engineer"
+}

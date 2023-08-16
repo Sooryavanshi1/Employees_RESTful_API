@@ -8,5 +8,5 @@ router.get("/",employeeController.getEmployeesBySalary);
 router.get("/all",employeeController.getAllEmployees);
 router.get("/:id",employeeController.getEmployeeByID);
 router.patch("/:id",employeeController.updateEmployeeSalaryByID);
-
+router.patch("/",employeeController.updatePostOfAll);
 module.exports = router;
