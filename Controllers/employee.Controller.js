@@ -76,6 +76,10 @@ module.exports={
         }
         res.send(updatedResults);
     }catch(error){
+        if(error instanceof mongoose.CastError){
+            next(createError(400,"Invalid ID"));
+            return;
+        }
         next(error);
     }
     }
