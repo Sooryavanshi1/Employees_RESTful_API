@@ -31,5 +31,16 @@ module.exports={
             next(error);
         }
 
+    },
+    getAllEmployees:async(req,res,next)=>{
+        try {
+            const employees = await Employee.find({},{__v:0});
+            if(employees.length===0){
+                throw createError(404,"No Employees Found");
+            }
+            res.send(employees);
+        } catch (error) {
+            next(error);
+        }
     }
 }

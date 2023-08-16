@@ -56,3 +56,10 @@ GET http://localhost:3000/employee?employee_Salary=60000
 ###
 
 GET http://localhost:3000/employee?employee_Salary=6000
+
+###
+
+GET http://localhost:3000/employee/all
+
+###
+
